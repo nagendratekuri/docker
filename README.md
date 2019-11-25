@@ -79,12 +79,5 @@ http://host-ip:800/
 ```
 ### Data Persistence - Volume Mapping
 ```sh
-docker run -p 800:5000 my-web-app
 
-800 in my host
-5000 on my container
-
-So, you can access by using
-
-http://host-ip:800/
 ```
