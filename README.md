@@ -1,83 +1,40 @@
-# Basic Docker commands
+# Docker installation on AWS EC2 RHEL
 
 ```sh
-docker run nginx
+sudo yum update -y
 
-# lists all running containers
-docker ps
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 
-# lists all containers
-docker ps -a
+sudo yum install docker-ce --nobest
 
-docker stop [cotiner id/name]
+sudo yum install docker-ce --nobest
 
-docker rm [cotiner id/name]
+sudo systemctl enable docker.service
 
-docker images
+sudo systemctl status docker.service
 
-docker rmi [image id/name]
+sudo systemctl start docker.service
 
-docker pull ubuntu
+# sudo systemctl stop docker.service
+# sudo systemctl restart docker.service
 
-docker run ubuntu
+sudo usermod -a -G docker ec2-user
 
-docker run ubuntu sleep 30
+sudo reboot
 
-docker exec [container id/name] cat /etc/hosts
+docker info
 
 ```
 
-### Run the container in datach mode
+### Test your Docker installation
 ```sh
-example:
+docker info
 
-docker run ubuntu
+docker help | more
 
-docker ps
+docker info
 
-docker run ubuntu sleep 30
+docker run hello-world
 
-docker run -d ubuntu sleep 30
-
-docker ps
-```
-### get inside the container
-```sh
-docker run -it centos bash
-```
-
-### EXEC
-```sh
-docker run -d ubuntu sleep 100
-
-docker ps
-
-docker exec [get id from the previous o/p] cat /etc/*release*
-```
-
-### TAG
-```sh
-# if you don't mention any tag, by default 'latest' will be pulled
-
-docker run redis
-
-# if you want to specify something
-
-docker run redis:4.0
-```
-
-### Port Mapping
-```sh
-docker run -p 800:5000 my-web-app
-
-800 in my host
-5000 on my container
-
-So, you can access by using
-
-http://host-ip:800/
-```
-### Data Persistence - Volume Mapping
-```sh
 
 ```
