@@ -14,7 +14,8 @@ redirect all traffic coming to port 80 to container traffic
 
 ```
 ```sh
-create a file named index.html in /home/ec2-user/html/
+create a file named index.html in /home/ec2-user/html/ and 
+copy the content from the attached index.html
 
 ```
 ### Testing
