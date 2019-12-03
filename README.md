@@ -7,8 +7,6 @@ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/dock
 
 sudo yum install docker-ce --nobest
 
-sudo yum install docker-ce --nobest
-
 sudo systemctl enable docker.service
 
 sudo systemctl status docker.service
