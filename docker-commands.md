@@ -33,6 +33,10 @@ example:
 
 docker run ubuntu
 
+docker run ubuntu cat /etc/*release*
+
+docker run ubuntu:16.04 cat /etc/*release*
+
 docker ps
 
 docker run ubuntu sleep 30
@@ -64,6 +68,16 @@ docker run redis
 # if you want to specify something
 
 docker run redis:4.0
+```
+### attach & detach
+```sh
+use '-d' to run in the detahced mode i.e. in the background
+
+docker run -d ubuntu sleep 1000
+
+if you want to atatch it 
+
+docker attach [cont-id]
 ```
 
 ### Port Mapping
